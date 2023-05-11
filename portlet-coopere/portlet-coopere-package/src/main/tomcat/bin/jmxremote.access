@@ -1,0 +1,4 @@
+# The "monitor" role has readonly access.
+# The "control" role has readwrite access.
+monitor readonly
+control readwrite

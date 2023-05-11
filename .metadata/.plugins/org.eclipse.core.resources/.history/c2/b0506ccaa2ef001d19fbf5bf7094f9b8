@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Built-By: vitor
+Build-Jdk: 17.0.6
+Implementation-Vendor-Id: br.unb.obsam
+Created-By: Maven Integration for Eclipse
+Date: 2023-05-11T01:37:21Z
+Implementation-Title: Dados Usuￃﾡrios - services
+Implementation-URL: https://projects.exoplatform.org/addons-parent-pom/i
+ dentity-extra-data-extension/identity-extra-data-services
+Implementation-Vendor: eXo Platform SAS
+Implementation-Version: 1.0.x-SNAPSHOT
+SCM-Revision: 
+SCM-URL: scm:git:git://github.com/exo-addons/addons-parent-pom.git/ident
+ ity-extra-data-extension/identity-extra-data-services
+Specification-Title: Dados Usuￃﾡrios - services
+Specification-Vendor: eXo Platform SAS
+Specification-Version: N/A.0
+

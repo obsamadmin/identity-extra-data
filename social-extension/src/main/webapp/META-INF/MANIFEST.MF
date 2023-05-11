@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven 3.6.3
+Built-By: ciagent
+Build-Jdk: 11.0.11
+Implementation-Vendor-Id: org.exoplatform.social
+Date: 2022-01-03T18:18:32Z
+Implementation-Title: eXo PLF:: Social Extension WAR
+Implementation-URL: https://projects.exoplatform.org/social/social-exten
+ sion/social-extension-war
+Implementation-Vendor: eXo Platform SAS
+Implementation-Version: 6.2.3
+SCM-Revision: 6537c84a37f3d7d7f4d4399f13649672e9294f6d
+SCM-URL: scm:git:git://github.com/exoplatform/social.git/social-extensio
+ n/social-extension-war
+Specification-Title: eXo PLF:: Social Extension WAR
+Specification-Vendor: eXo Platform SAS
+Specification-Version: N/A.0
+

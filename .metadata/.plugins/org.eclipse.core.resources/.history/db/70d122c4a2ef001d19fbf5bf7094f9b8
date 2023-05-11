@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Build-Jdk-Spec: 17
+Created-By: Maven Integration for Eclipse
+Date: 2023-05-11T01:37:22Z
+Implementation-Title: Dados Usuários - webapp
+Implementation-URL: https://projects.exoplatform.org/addons-parent-pom/i
+ dentity-extra-data-extension/identity-extra-data-webapp
+Implementation-Vendor: eXo Platform SAS
+Implementation-Version: 1.0.x-SNAPSHOT
+SCM-Revision: 
+SCM-URL: scm:git:git://github.com/exo-addons/addons-parent-pom.git/ident
+ ity-extra-data-extension/identity-extra-data-webapp
+Specification-Title: Dados Usuários - webapp
+Specification-Vendor: eXo Platform SAS
+Specification-Version: N/A.0
+

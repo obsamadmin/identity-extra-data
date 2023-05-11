@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.exoplatform</groupId>
+    <artifactId>exo.parent</artifactId>
+    <version>8.1</version>
+  </parent>
+  <groupId>br.unb.coopere</groupId>
+  <artifactId>portlet-coopere</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>portlet-coopere - portal</name>
+
+
+
+  <properties>
+    <!-- Dependencies versions -->
+    <!-- WARNING : dont forget to sync up intranet-extension with office-extension -->        
+    <org.exoplatform.platform.version>3.0.6</org.exoplatform.platform.version>
+    <org.exoplatform.kernel.version>2.2.10-GA</org.exoplatform.kernel.version>
+    <org.exoplatform.core.version>2.3.10-GA</org.exoplatform.core.version>
+    <org.exoplatform.portal.version>3.1.10-PLF</org.exoplatform.portal.version>
+    <org.exoplatform.ws.version>2.1.10-GA</org.exoplatform.ws.version>
+    <org.exoplatform.jcr.version>1.12.10-GA</org.exoplatform.jcr.version>
+    <org.exoplatform.ks.version>2.1.6</org.exoplatform.ks.version>
+    <org.exoplatform.cs.version>2.1.6</org.exoplatform.cs.version>
+    <org.exoplatform.ecms.version>2.1.6</org.exoplatform.ecms.version>
+    <org.exoplatform.social.version>1.1.6</org.exoplatform.social.version>
+    <org.exoplatform.commons.version>1.0.6</org.exoplatform.commons.version>
+    <org.json.version>20070829</org.json.version>
+    <mysql.connector.java.version>5.1.13</mysql.connector.java.version>
+    <tomcat-catalina-jmx-remote.version>6.0.32</tomcat-catalina-jmx-remote.version>
+    <!-- ****************************************************** -->
+    <!-- Plugin versions (waiting for an upgrade in exo parent) -->
+    <!-- ****************************************************** -->
+    <version.assembly.plugin>2.2.1</version.assembly.plugin>
+    <version.clean.plugin>2.4.1</version.clean.plugin>
+    <version.compiler.plugin>2.3.1</version.compiler.plugin>
+    <version.deploy.plugin>2.5</version.deploy.plugin>
+    <version.install.plugin>2.3.1</version.install.plugin>
+    <version.jar.plugin>2.3.1</version.jar.plugin>
+    <version.resources.plugin>2.4.3</version.resources.plugin>
+    <version.surefire.plugin>2.6</version.surefire.plugin>
+    <version.versions.plugin>1.2</version.versions.plugin>
+    <version.war.plugin>2.1</version.war.plugin>
+    <!-- ************** -->
+    <!-- Build settings -->
+    <!-- ************** -->
+    <!-- We enforce Java 6 to build to use Chromattic and APT -->
+    <jdk.min.version>1.6</jdk.min.version>
+    <!-- Required to grab dependencies from PLF -->
+    <maven.min.version>3.0.3</maven.min.version>
+    <!-- maven-release-plugin -->
+    <preparationGoals>clean install</preparationGoals>
+  </properties>
+  <!-- ALL DEPENDENCIES VERSIONS ARE DEFINED IN PARENT POM -->
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.exoplatform.portal</groupId>
+        <artifactId>exo.portal.webui.portal</artifactId>
+        <version>${org.exoplatform.portal.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.kernel</groupId>
+        <artifactId>exo.kernel.container</artifactId>
+        <version>${org.exoplatform.kernel.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.jcr</groupId>
+        <artifactId>exo.jcr.framework.command</artifactId>
+        <version>${org.exoplatform.jcr.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.ws</groupId>
+        <artifactId>exo.ws.rest.core</artifactId>
+        <version>${org.exoplatform.ws.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.ks</groupId>
+        <artifactId>exo.ks.eXoApplication.forum.service</artifactId>
+        <version>${org.exoplatform.ks.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.ecms</groupId>
+        <artifactId>exo-ecms-core-services</artifactId>
+        <version>${org.exoplatform.ecms.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.social</groupId>
+        <artifactId>exo.social.component.common</artifactId>
+        <version>${org.exoplatform.social.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.social</groupId>
+        <artifactId>exo.social.component.core</artifactId>
+        <version>${org.exoplatform.social.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.social</groupId>
+        <artifactId>exo.social.component.service</artifactId>
+        <version>${org.exoplatform.social.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.social</groupId>
+        <artifactId>exo.social.extras.document-composer-plugin</artifactId>
+        <version>${org.exoplatform.social.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.cs</groupId>
+        <artifactId>exo.cs.eXoApplication.chat.service</artifactId>
+        <version>${org.exoplatform.cs.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform</groupId>
+        <artifactId>exo.platform.packaging.assembly</artifactId>
+        <classifier>tomcat</classifier>
+        <version>${org.exoplatform.platform.version}</version>
+        <type>zip</type>
+      </dependency>
+      <dependency>
+        <groupId>org.json</groupId>
+        <artifactId>json</artifactId>
+        <version>${org.json.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>${mysql.connector.java.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.tomcat</groupId>
+        <artifactId>tomcat-catalina-jmx-remote</artifactId>
+        <version>${tomcat-catalina-jmx-remote.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>br.unb.coopere</groupId>
+        <artifactId>portlet-coopere-config</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>br.unb.coopere</groupId>
+        <artifactId>portlet-coopere-webapp</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <type>war</type>
+      </dependency>
+	  <dependency>
+        <groupId>br.unb.coopere</groupId>
+        <artifactId>portlet-coopere-ear</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <type>ear</type>
+      </dependency>
+	<dependency>
+      <groupId>org.exoplatform.core</groupId>
+      <artifactId>exo.core.component.organization.api</artifactId>
+      <version>${org.exoplatform.core.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.jcr</groupId>
+      <artifactId>exo.jcr.component.core</artifactId>
+      <version>${org.exoplatform.jcr.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.jcr</groupId>
+      <artifactId>exo.jcr.component.ext</artifactId>
+      <version>${org.exoplatform.jcr.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.portal</groupId>
+      <artifactId>exo.portal.component.portal</artifactId>
+      <version>${org.exoplatform.portal.version}</version>
+      <scope>provided</scope>
+    </dependency>
+
+
+    </dependencies>
+  </dependencyManagement>
+  <!-- MODULES -->
+  
+  <modules>
+    <module>portlet-coopere-config</module>
+    <module>portlet-coopere-webapp</module>
+    <module>portlet-coopere-ear</module>
+    <module>portlet-coopere-package</module>
+  </modules>
+</project>
