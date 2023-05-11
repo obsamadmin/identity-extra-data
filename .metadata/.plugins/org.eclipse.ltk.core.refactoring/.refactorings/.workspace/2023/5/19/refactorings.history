@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;my-connection-birthdays&apos; to &apos;ide&apos;" description="Rename resource &apos;my-connection-birthdays&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/my-connection-birthdays" name="ide" stamp="1683767636299" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;ide&apos; to &apos;identity-extra-data&apos;" description="Rename resource &apos;ide&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/ide" name="identity-extra-data" stamp="1683767653819" updateReferences="true"/>
-</session>
