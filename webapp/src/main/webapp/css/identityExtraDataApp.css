@@ -1,4 +1,4 @@
- #birthdayAppMain {
+ #identityExtraDataAppMain {
    display: flex;
    background: white;
    flex-direction: column;
@@ -8,15 +8,15 @@
    margin-bottom: 20px;
  }
 
- #birthday-list {
+ #identity-extra-data-list {
    min-width: 300px;
  }
 
- #birthday-list input {
+ #identity-extra-data input {
    width: 80%;
  }
 
-.birthday-app-title {
+.identity-extra-data-app-title {
   text-transform: uppercase;
   font-size: 1.25rem !important;
   font-weight: 500;

@@ -20,7 +20,7 @@
     <resource-bundle>locale.portlet.identityExtraDataApp</resource-bundle>
     <!-- Extra information for the portlet -->
     <portlet-info>
-      <title>Vue Webpack Sample</title>
+      <title>Portlet de Exemplo - OBSAM 2</title>
     </portlet-info>
   </portlet>
 

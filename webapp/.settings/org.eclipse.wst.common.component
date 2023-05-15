@@ -10,7 +10,7 @@
                 
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
                 
-        <property name="java-output-path" value="/my-connections-birthday-webapp/target/classes"/>
+        <property name="java-output-path" value="/identity-extra-data-webapp/target/classes"/>
                 
         <property name="component.exclusion.patterns" value="WEB-INF/lib/*.jar,**/*.less,**/less/**,**/*.vue,css/lib/*,vue-app/**,js/mock/**/*,**-dev.*,**/vue-apps"/>
         <property name="context-root" value="identity-extra-data-webapp"/>

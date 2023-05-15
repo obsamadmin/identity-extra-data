@@ -1,13 +1,13 @@
 <template>
-  <div id="birthday-list">
+  <div id="identity-extra-data-list">
     <span class="alert-error">{{ this.errorMessage }}</span>
     <span class="alert-success">{{ this.successMessage }}</span>
     <input
       type="date"
-      class="birthday-date"
+      class="identity-extra-data-date"
       v-model="birthdayDate"
       @keyup.enter="saveBirthday">
-    <button @click="saveBirthday" type="button">{{ $t('birthdayApp.i18n.OK') }}</button>
+    <button @click="saveBirthday" type="button">{{ $t('identityExtraDataApp.i18n.OK') }}</button>
     <ul>
       <li v-for="(item, index) in birthdayItems" :key="index">
         <div v-if="item.birthday">
@@ -43,7 +43,8 @@ export default {
         return resp.json();
       }
     }).then(data => {
-      this.birthdayItems = data;
+      this.birthdayItems = data.connections;
+      this.birthdayDate = data.myBirthday;
     });
   },
   methods: {
@@ -57,14 +58,14 @@ export default {
         }
       }).then(resp => {
         if (!resp || !resp.ok) {
-          this.errorMessage = 'An error happened when updating birthday';
+          this.errorMessage = 'Erro ao atualizar a data.';
           setTimeout(() => (this.errorMessage = ''), 5000);
           throw new Error('Response code indicates a server error', resp);
         } else {
           return resp.json();
         }
       }).then(() => {
-        this.successMessage = 'Birthday updated successfully!';
+        this.successMessage = 'Data atualizada com sucesso!';
         setTimeout(() => (this.successMessage = ''), 5000);
       });
     },

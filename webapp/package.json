@@ -12,7 +12,7 @@
     "eslint-check": "eslint  \"./src/main/webapp/vue-app/**\"",
     "build": "webpack --config webpack.prod.js --mode production"
   },
-  "author": "eXo",
+  "author": "OBSAM",
   "license": "LGPL",
   "devDependencies": {
     "babel-loader": "^8.2.4",

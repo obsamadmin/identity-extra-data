@@ -54,26 +54,32 @@ public class MyConnectionsBirthdayRESTService implements ResourceContainer {
       // Carrega a lista de conexões do usuário
       ListAccess<Identity> connections = relationshipManager.getConnections(authenticatedUser);
       Identity[] connectionsIdentities = connections.load(0, connections.getSize());
+      Profile authenticatedUserProfile = authenticatedUser.getProfile();
 
       // Cria um array JSON de respostas com os usuários conectados e as respectivas datas de aniversários
-      JSONArray jsonArray = new JSONArray();
+      JSONObject jsonObjectReturn = new JSONObject();
+      jsonObjectReturn.put("connections", new JSONArray());
       for (Identity connection : connectionsIdentities) {
         JSONObject connectionJSON = new JSONObject();
         connectionJSON.put("userName", connection.getRemoteId());
         connectionJSON.put("fullName", connection.getProfile().getFullName());
         connectionJSON.put("avatar", connection.getProfile().getAvatarUrl());
         connectionJSON.put(BIRTHDAY_PROPERTY, connection.getProfile().getProperty(BIRTHDAY_PROPERTY));
-        jsonArray.put(connectionJSON);
+        System.out.print(connection.getProfile());
+        ((JSONArray)jsonObjectReturn.get("connections")).put(connectionJSON);
       }
+      if(authenticatedUserProfile.contains(BIRTHDAY_PROPERTY))
+    	  jsonObjectReturn.put("myBirthday", authenticatedUserProfile.getProperty(BIRTHDAY_PROPERTY));
 
       // Se estiver tudo correto,retorna o Array
-      return Response.ok(jsonArray.toString()).build();
+      return Response.ok(jsonObjectReturn.toString()).build();
     } catch (Exception e) {
       // Se estiver errado, retorna uma mensagem de erro
       LOG.error("Error obtendo conexão com{}", authenticatedUserName, e);
       return Response.serverError().build();
     }
   }
+
 
   //Função para atualizar a data de aniversário do próprio usuário
   @POST
